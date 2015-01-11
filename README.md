@@ -18,7 +18,7 @@ Lastly, each script below contains commands to download a zip file, create both 
 
 I have put a comment mark infront of the unzip command so that you can control when or whether you want to execute that command. 
 
-###### Data descriptions:
+##### Data descriptions:
 
 This assignment uses data from the UC Irvine Machine Learning Repository (http://archive.ics.uci.edu/ml/), a popular repository for machine learning datasets. In particular, we will be using the “Individual household electric power consumption Data Set” which I have made available on the course web site.
 
