@@ -127,6 +127,6 @@ plot5<-plot(df$Global_reactive_power~df$DateTime, type= "l", col="black",
 #Copy screen device output to png, saved in ./images/ with w,h at 480 pixels
 #####################
 
-dev.copy(png, file = "./images/plot3.png", width = 480, height =480)  ## Copy my plot to a PNG file
+dev.copy(png, file = "./images/plot4.png", width = 480, height =480)  ## Copy my plot to a PNG file
 dev.off()  ## Don't forget to close the PNG device!
 
