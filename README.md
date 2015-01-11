@@ -13,12 +13,13 @@ All .PNG images are located in the images folder of repository.
 
 #### A comment to peer reviewers
 
-    When I create the plots on my screen, they look very close to the images created by Dr. Peng. Even the last plot with 4 individual plots.
+When I create the plots on my screen, they look very close to the images created by Dr. Peng. Even the last plot with 4 individual plots.
 
-    But when I look at what is produced by my github repo, the images have changed.  
+But when I look at what is produced by my github repo, the images have changed.  
 
-    Based on this comment: https://class.coursera.org/exdata-010/forum/thread?thread_id=94#comment-259
-    I've decided that my images are correct enough for the purposes of this assignment.  Of course, it's up to you to decide. Please take a look at what the screen produces before deciding I should get zero.
+Based on this comment: https://class.coursera.org/exdata-010/forum/thread?thread_id=94#comment-259
+
+I've decided that my images are correct enough for the purposes of this assignment.  Of course, it's up to you to decide. Please take a look at what the screen produces before deciding I should get zero.
 
 
 #Warning:
