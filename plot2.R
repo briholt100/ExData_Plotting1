@@ -76,9 +76,6 @@ df<-full[useDates,]
 #########################
 
 df$Global_active_power<-as.numeric(df$Global_active_power)
-str(df)
-
-(df$Date,df$Global_a)
 
 #####################
 #Create image folder/directory

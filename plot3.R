@@ -67,7 +67,7 @@ df<-full[useDates,]
 
 
 ##########################
-#PLOT 2
+#PLOT 3
 ##########################
 
 
@@ -76,9 +76,7 @@ df<-full[useDates,]
 #########################
 
 df$Global_active_power<-as.numeric(df$Global_active_power)
-str(df)
 
-(df$Date,df$Global_a)
 
 #####################
 #Create image folder/directory
@@ -92,15 +90,21 @@ if (!file.exists("images")) {
 #Create plot
 #####################
 
-plot2<-plot(df$Global_active_power~df$DateTime, type= "l", col="black",
-            ylab="Global Active Power (kilowatts)"
+plot3<-plot(df$Sub_metering_1~df$DateTime, type= "l", col="black",
+            ylab="Energy sub metering"
             , xlab ="")
+lines(df$Sub_metering_2~df$DateTime,col="red")
+lines(df$Sub_metering_3~df$DateTime,col="blue")
+
+legend ("topright", c("Sub_metering_1","Sub_metering_2", "Sub_metering_3")
+        , lty = c(1, 1, 1), col = c("black","red","blue"))
+
 
 
 #####################
 #Copy screen device output to png, saved in ./images/ with w,h at 480 pixels
 #####################
 
-dev.copy(png, file = "./images/plot2.png", width = 480, height =480)  ## Copy my plot to a PNG file
+dev.copy(png, file = "./images/plot3.png", width = 480, height =480)  ## Copy my plot to a PNG file
 dev.off()  ## Don't forget to close the PNG device!
 
