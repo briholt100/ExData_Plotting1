@@ -11,7 +11,7 @@
 getwd()
 ###
 #setwd("Insert your directory location the Plot?.r script)
-
+setwd("/home/brian/Projects/Coursera/Explore/Project1")
 
 #######
 ##libraries
@@ -28,8 +28,8 @@ if (!file.exists("data")) {
 # Check if data already exists; if not, download it.
 ######
 
-if (!file.exists('./Plot1/data/household_power_consumption.zip')) {
-  download.file(fileUrl, './Plot1/data/household_power_consumption.zip', method='wget')
+if (!file.exists('./data/household_power_consumption.zip')) {
+  download.file(fileUrl, './data/household_power_consumption.zip', method='wget')
 }
 
 ######
@@ -39,15 +39,15 @@ if (!file.exists('./Plot1/data/household_power_consumption.zip')) {
 
 
 ####Read random sample to get file structure
-tmp<-read.csv("./Plot1/data/household_power_consumption.txt", header = TRUE, sep=";", nrows=20)
+tmp<-read.csv("./data/household_power_consumption.txt", header = TRUE, sep=";", nrows=20)
 names(tmp)
 ################################
 #This next step will take some processing time. If it fails, use the following code:
-#df2 <- fread('grep "^[12]/2/2007" ./Plot1/data/household_power_consumption.txt', sep=";", header= F, na.strings="?")
+#df2 <- fread('grep "^[12]/2/2007" ./data/household_power_consumption.txt', sep=";", header= F, na.strings="?")
 #colnames(df2)<-names(tmp)
 ################################
 
-full<-read.csv("./Plot1/data/household_power_consumption.txt",header=T,sep=";", na.strings=c("?",""))
+full<-read.csv("./data/household_power_consumption.txt",header=T,sep=";", na.strings=c("?",""))
 full$Date<-dmy(full$Date)
 
 ################################
@@ -98,6 +98,6 @@ hist1<-hist(df2$Global_active_power, col="red",
 #Copy screen device output to png, saved in ./images/ with w,h at 480 pixels
 #####################
 
-dev.copy(png, file = "./Plot1/images/plot1.png", width = 480, height =480)  ## Copy my plot to a PNG file
+dev.copy(png, file = "./images/plot1.png", width = 480, height =480)  ## Copy my plot to a PNG file
 dev.off()  ## Don't forget to close the PNG device!
 
