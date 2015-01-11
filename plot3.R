@@ -49,7 +49,7 @@ names(tmp)
 
 full<-read.csv("./data/household_power_consumption.txt",header=T,sep=";", na.strings=c("?",""))
 full$Date<-dmy(full$Date)
-
+full$Time<-hms(full$Time)
 ################################
 #This next step will also take some processing time
 ################################
@@ -67,15 +67,18 @@ df<-full[useDates,]
 
 
 ##########################
-#PLOT 1
+#PLOT 2
 ##########################
 
 
 #########################
-#Change varialbe to numeric
+#Change varialbes to numeric
 #########################
 
 df$Global_active_power<-as.numeric(df$Global_active_power)
+str(df)
+
+(df$Date,df$Global_a)
 
 #####################
 #Create image folder/directory
@@ -86,18 +89,18 @@ if (!file.exists("images")) {
 }
 
 #####################
-#Create histogram
+#Create plot
 #####################
 
-hist1<-hist(df$Global_active_power, col="red",
-            main="Global Active Power",
-            xlab="Global Active Power (kilowatts)")
+plot2<-plot(df$Global_active_power~df$DateTime, type= "l", col="black",
+            ylab="Global Active Power (kilowatts)"
+            , xlab ="")
 
 
 #####################
 #Copy screen device output to png, saved in ./images/ with w,h at 480 pixels
 #####################
 
-dev.copy(png, file = "./images/plot1.png", width = 480, height =480)  ## Copy my plot to a PNG file
+dev.copy(png, file = "./images/plot2.png", width = 480, height =480)  ## Copy my plot to a PNG file
 dev.off()  ## Don't forget to close the PNG device!
 
